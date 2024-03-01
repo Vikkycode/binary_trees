@@ -2,52 +2,50 @@
 #include <stdlib.h>
 
 /**
- * tree_height -function measures the height of a binary tree
+ * tree_height - measures the height of a binary tree
  * @tree: pointer to the root node of the tree to measure the height
  *
- * Return: the value stored in the root node
+ * Return: Height or 0 if tree is NULL
  */
 size_t tree_height(const heap_t *tree)
 {
-	size_t height_bin;
-	size_t height_tre;
-	height_bin = 0;
-	height_tre = 0;
+	size_t height_l = 0;
+	size_t height_r = 0;
 
 	if (!tree)
 		return (0);
 
 	if (tree->left)
-		height_bin = 1 + tree_height(tree->left);
+		height_l = 1 + tree_height(tree->left);
 
 	if (tree->right)
-		height_tre = 1 + tree_height(tree->right);
+		height_r = 1 + tree_height(tree->right);
 
-	if (height_bin > height_tre)
-		return (height_bin);
-	return (height_tre);
+	if (height_l > height_r)
+		return (height_l);
+	return (height_r);
 }
 /**
  * tree_size_h - measures the sum of heights of a binary tree
- * @tree: pointer to the root_node of the tree to be meatsured
+ * @tree: pointer to the root node of the tree to measure the height
  *
- * Return: the value stored in the root node
+ * Return: Height or 0 if tree is NULL
  */
 size_t tree_size_h(const binary_tree_t *tree)
 {
-	size_t height_bin = 0;
-	size_t height_tre = 0;
+	size_t height_l = 0;
+	size_t height_r = 0;
 
 	if (!tree)
 		return (0);
 
 	if (tree->left)
-		height_bin= 1 + tree_size_h(tree->left);
+		height_l = 1 + tree_size_h(tree->left);
 
 	if (tree->right)
-		height_tre = 1 + tree_size_h(tree->right);
+		height_r = 1 + tree_size_h(tree->right);
 
-	return (height_bin + height_tre);
+	return (height_l + height_r);
 }
 
 /**
