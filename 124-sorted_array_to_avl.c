@@ -1,13 +1,13 @@
 #include "binary_trees.h"
 
 /**
- * create_tree-function creates an AVL tree with recursion
+ * create_tree - creates an AVL tree with recursion
  *
- * @node: pointer to  node
- * @array: array of integers
+ * @node: pointer node
+ * @array: input array of integers
  * @size: size of array
  * @mode: 1 to adding on the left, 2 to adding on the right
- * Return: zero
+ * Return: no return
  */
 void create_tree(avl_t **node, int *array, size_t size, int mode)
 {
@@ -34,11 +34,11 @@ void create_tree(avl_t **node, int *array, size_t size, int mode)
 }
 
 /**
- * sorted_array_to_avl-creates root node and calls to create_tree
+ * sorted_array_to_avl - creates root node and calls to create_tree
  *
- * @array: array of integers
+ * @array: input array of integers
  * @size: size of array
- * Return: a pointer to the root_node
+ * Return: pointer to the root
  */
 avl_t *sorted_array_to_avl(int *array, size_t size)
 {
