@@ -5,7 +5,6 @@
  * @tree: tree to go through
  * Return: balanced factor
  */
-
 void bal(avl_t **tree)
 {
 	int bval;
@@ -23,13 +22,11 @@ void bal(avl_t **tree)
 		*tree = binary_tree_rotate_left((binary_tree_t *)*tree);
 }
 /**
- * successor -gets the next successor, the min node in the right subtree
+ * successor - get the next successor i mean the min node in the right subtree
  * @node: tree to check
- * Return: the min value of the tree
+ * Return: the min value of this tree
  */
-
 int successor(bst_t *node)
-
 {
 	int left = 0;
 
@@ -48,15 +45,12 @@ int successor(bst_t *node)
 	}
 
 }
-
 /**
- *remove_type -This function removes a node depending on its children
+ *remove_type - function that removes a node depending of its children
  *@root: node to remove
  *Return: 0 if it has no children or other value if it has
  */
-
 int remove_type(bst_t *root)
-
 {
 	int new_value = 0;
 
@@ -97,16 +91,13 @@ int remove_type(bst_t *root)
 		return (new_value);
 	}
 }
-
 /**
- * bst_remove - removes a node from a BST tree
- * @root: root-node of the tree
- * @value: node value to be removed
- * Return: the changed tree
+ * bst_remove - remove a node from a BST tree
+ * @root: root of the tree
+ * @value: node with this value to remove
+ * Return: the tree changed
  */
-
 bst_t *bst_remove(bst_t *root, int value)
-
 {
 	int type = 0;
 
@@ -128,12 +119,11 @@ bst_t *bst_remove(bst_t *root, int value)
 }
 
 /**
- * avl_remove - removes a node from a AVL tree
- * @root: root-node of the tree
+ * avl_remove - remove a node from a AVL tree
+ * @root: root of the tree
  * @value: node with this value to remove
- * Return: the changed tree
+ * Return: the tree changed
  */
-
 avl_t *avl_remove(avl_t *root, int value)
 {
 	avl_t *root_a = (avl_t *) bst_remove((bst_t *) root, value);
